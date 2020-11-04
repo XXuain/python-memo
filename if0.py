@@ -1,2 +1,3 @@
 age = input('age? ')
-age = int(age)
+if int(age) > 50:
+  print('old')
