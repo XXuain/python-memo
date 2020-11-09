@@ -1,4 +1,12 @@
 products = []
+
+with open('products.csv', 'r', encoding='utf-8') as file:
+    for f in file:
+        if '商品,價格' in f:
+            continue  # 繼續
+        name, price = f.strip().split(',')  # split 會將區塊變成清單
+        products.append([name, price])
+
 while True:
     name = input('product name: ')
     if name == 'q':
