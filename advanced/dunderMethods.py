@@ -1,3 +1,4 @@
+# data model
 class Product:
     def __init__(self, name, price):
         self.name = name
@@ -31,3 +32,15 @@ print(p1 + p2)
 print(p1 * 5)
 print(p1)
 # print(repr(p))
+
+
+class ShoppingCart:
+    def __init__(self, products):
+        self.products = products
+
+    def __getitem__(self, key):
+        return self.products[key]
+
+
+s = ShoppingCart([p1, p2])
+print(s[0])
